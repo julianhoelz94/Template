@@ -50,11 +50,11 @@
   \clearfield{editorbtype}%
   \clearfield{month}%
   \clearfield{day}%
-}
+}%
 
 \DefineBibliographyStrings{english}{%
   edition = {edition},%
-}
+}%
 
 
 % Some automatic page layout variables
@@ -90,32 +90,7 @@
 \newtheorem*{remark}{Remark}
 \newtheorem{nrremark}[theorem]{Remark}
 
-\numberwithin{equation}{section}
-
-
-% math symbol definitions
-\DeclareMathOperator{\Span}{\operatorname{span}}
-\DeclareMathOperator{\Cl}{\operatorname{cl}}
-\DeclareMathOperator{\Int}{\operatorname{int}}
-\DeclareMathOperator{\Dist}{\operatorname{dist}}
-\DeclareMathOperator{\dist}{\operatorname{d}}
-\DeclareMathOperator{\co}{\operatorname{co}}
-\DeclareMathOperator{\oco}{\ensuremath{\overline{\co}}}
-\DeclareMathOperator{\conv}{\operatorname{conv}}
-\DeclareMathOperator{\comp}{\operatorname{comp}}
-\DeclareMathOperator{\Cov}{\operatorname{Cov}}
-\DeclareMathOperator{\blockdiag}{\operatorname{blockdiag}}
-\DeclareMathOperator{\supp}{\operatorname{supp}}
-\DeclareMathOperator{\trace}{\operatorname{trace}}
-
-\renewcommand{\qedsymbol}{\( \blacksquare \)}
-\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
-\renewcommand{\phi}{\ensuremath{\varphi}}
-
-\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1 
-    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
-
-\renewcommand{\restriction}{\ensuremath{\big|}}
+\numberwithin{equation}{section} % equation numbering in the format section.equation
 
 % ZAHLEN
 \newcommand{\N}{\mathbb{N}}
@@ -125,26 +100,47 @@
 \newcommand{\C}{\mathbb{C}}
 
 % MENGEN
-\newcommand{\Po}{\mathfrak{P}}
+\newcommand*{\Pot}{\mathcal{P}}
 \newcommand{\compl}{^{\text{\tiny C}}}
 \newcommand{\pd}{\operatorname{p.d.}}
 
+% TOPOLOGIE
+\DeclareMathOperator{\Cl}{\operatorname{cl}} % topological closure
+\DeclareMathOperator{\Int}{\operatorname{int}} % topological interiour
+\DeclareMathOperator{\dist}{\operatorname{d}} % distance of two points
+\DeclareMathOperator{\Dist}{\operatorname{dist}} % distance of point and set
+
+% (LINEARE) ALGEBRA
+\DeclareMathOperator{\Span}{\operatorname{span}} % Linear Span
+\DeclareMathOperator{\trace}{\operatorname{trace}} % Trace
+\DeclareMathOperator{\blockdiag}{\operatorname{blockdiag}} % Blockdiagonal matrix
+
 % STOCHASTIK
-\renewcommand{\O}{\Omega}
-\newcommand{\A}{\mathcal{A}}
-\renewcommand{\Pr}{\mathbb{P}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\e}{\mathcal{E}}
-\renewcommand{\L}{\mathcal{L}}
-\newcommand{\B}{\mathfrak{B}}
-\renewcommand{\o}{\omega}
-\newcommand{\iid}{\operatorname{i.i.d.}}
+\DeclareMathOperator{\Cov}{\operatorname{Cov}} % Covariance
+\renewcommand{\O}{\Omega} % Set of Events
+\newcommand*{\A}{\mathcal{A}} % Sigma-Algebra
+\renewcommand{\Pr}{\mathbb{P}} % Probability measure
+\newcommand*{\E}{\mathbb{E}} % Expectation 
+\newcommand*{\F}{\mathcal{F}} % Filtration F
+\newcommand*{\G}{\mathcal{G}} % Filtration G
+\newcommand{\e}{\mathcal{E}} % Generator E
+\newcommand*{\B}{\mathcal{B}} % Borel Sigma-Algebra
+\renewcommand{\o}{\omega} % Elemento of Set of Events
+\newcommand*{\iid}{\operatorname{i.i.d.}} % independent, identically distributed
 
 % ANALYSIS
-\newcommand{\limfty}[1]{\lim\limits_{#1\to\infty}}
-\renewcommand{\max}{\operatorname{max}}
-\renewcommand{\min}{\operatorname{min}}
+\DeclareMathOperator{\supp}{\operatorname{supp}} % support
+\newcommand*{\limfty}[1]{\lim\limits_{#1\to\infty}} % limit to infty
+
+% MISC
+\renewcommand{\qedsymbol}{\( \blacksquare \)}
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+
+\newcommand*{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+\renewcommand{\restriction}{\ensuremath{\big|}}
 
 
 % Files to include include to the document
@@ -167,13 +163,13 @@
 \newcommand*{\metaDate}{22. November 2019}
 \newcommand*{\metaFakultaet}{Fakultät für Informatik und Mathematik der Universität Passau} % für korrekte Grammatik im Dativ formulieren
 \hypersetup{
-            pdfauthor={\metaAuthor},%
-            pdftitle={\metaTitle},%
-            pdfsubject={},%
-            pdfkeywords={},%
-            pdfproducer={},%
-            pdfcreator={pdflatex},%
-            pdfpagemode=UseOutlines%
+  pdfauthor={\metaAuthor},%
+  pdftitle={\metaTitle},%
+  pdfsubject={},%
+  pdfkeywords={},%
+  pdfproducer={},%
+  pdfcreator={pdflatex},%
+  pdfpagemode=UseOutlines%
 }%
 
 
@@ -243,6 +239,6 @@ Passau, den \metaDate{} \hfill%
 \begin{tabular}{R{5cm}}%
   \vspace{1em} \hrulefill{} \\%
   \metaAuthor%
-\end{tabular}
+\end{tabular}%
 
-\end{document}
+\end{document}%

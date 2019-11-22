@@ -1,2 +1,2 @@
 # Template
- Latex Template for Mathematics
+ Latex Template for Seminar Papers. Particularly suited for Students of Mathematical Sciences.
